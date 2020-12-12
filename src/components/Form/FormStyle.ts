@@ -5,6 +5,10 @@ export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-self: center;
+
+  @media (min-width: 1200px) {
+    width: 40rem;
+  }
 `;
 
 export const Button = styled.button`
