@@ -53,19 +53,20 @@ export const Wrapper = styled.div`
 `;
 
 const EnterLogo = keyframes`
-from {
-  opacity: 0;
-  transform: translateY(-10rem);
+0% {
+  transform: scale(1);
 }
-to {
-  opacity: 1;
-  transform: translateY(0rem);
+50% {
+  transform: scale(1.2);
+}
+100% {
+  transform: scale(1);
 }
 `;
 
 export const Logo = styled.img`
-  opacity: 0;
   width: 25rem;
+  scale: 1;
   animation: ${EnterLogo} 0.3s linear 0.4s forwards;
 `;
 
