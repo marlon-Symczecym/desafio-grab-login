@@ -24,7 +24,7 @@ export const InputWrapper = styled.div<IInputWrapper>`
   justify-content: center;
 `;
 
-export const Icon = styled.img`
+export const Icon = styled.div`
   width: 2rem;
   height: 2rem;
   margin-left: 1.5rem;
@@ -47,5 +47,6 @@ export const FormInput = styled.input`
 export const MessageError = styled.span`
   font-size: 1.8rem;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
 `;
