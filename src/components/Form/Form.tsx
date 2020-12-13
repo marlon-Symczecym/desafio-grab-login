@@ -3,60 +3,39 @@ import React from 'react'
 import Input from '../Input/Input'
 
 import {FormWrapper, Button, MessageError} from './FormStyle'
+import useFormValidate from '../../hooks/useFormValidate/useFormValidate'
 
 const Form = () => {
   const [form, setForm] = React.useState({
     email: '',
     password: ''
-  })
-  const [errorField, setErrorField] = React.useState({
-    email: '',
-  })
+  });
   const [messageForm, setMessageForm] = React.useState<string | boolean | any>({
     erro: true,
     message: ''
-  })
+  });
   const timeoutRef = React.useRef(0)
+  const {validatePassword, validateData, errorField} = useFormValidate()
 
-  function validatePassword() {
-    if(form.password.length >= 4) {
-      setErrorField({email: ''})
-      return true;
-    }
-  }
-
-  function validateData()  {
-    if(form.email.includes('@')) {
-      const value = form.email.valueOf();
-      const beforeSign = value.split("@")
-
-      if(beforeSign[0].length >= 4) {
-        setErrorField({email: ''})
-        return true
-      }else {
-        setErrorField({...errorField, email: 'Insira um e-mail valído'})
-      }
-    }else {
-      setErrorField({...errorField, email: 'Insira um e-mail valído'})
-    }
-  }
-
-  function handleSubmit(event: React.FormEvent) {
-    event.preventDefault()
-    if(validateData() && validatePassword()) {
-      setMessageForm({erro: false, message: 'Login feito com sucesso!'})
-
+  function messageSetTimeOut(time: number) {
       clearTimeout(timeoutRef.current)
       timeoutRef.current = setTimeout(() => {
         setMessageForm({erro: false, message: ''})
-      }, 3000)
-    } else {
-      setMessageForm({erro: true, message: 'Os dados estão incorretos!'})
+      }, time)
+  }
 
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = setTimeout(() => {
-        setMessageForm('')
-      }, 3000)
+ async function handleSubmit(event: React.FormEvent) {
+    event.preventDefault()
+
+    if(validateData(form.email) && 
+       validatePassword(form.password))
+    {
+      
+      setMessageForm({erro: false, message: "Login efetuado com sucesso!"})
+      messageSetTimeOut(3000)
+    } else {
+      setMessageForm({erro: true, message: 'Dados incorretos!'})
+      messageSetTimeOut(3000)
     }
   }
 
@@ -68,7 +47,11 @@ const Form = () => {
   return (
     <>
       <FormWrapper onSubmit={handleSubmit}>
-        <MessageError style={{color: messageForm.erro ? '#FF5757' : '#00D857', display: messageForm.message ? 'block' : 'none'}}>{messageForm.message}</MessageError>
+        <MessageError 
+          style={{color: messageForm.erro ? '#FF5757' : '#00D857', 
+                  display: messageForm.message ? 'block' : 'none'}}>
+          {messageForm.message}
+        </MessageError>
         <Input 
           values={form.email} 
           handleChange={handleChange} 
