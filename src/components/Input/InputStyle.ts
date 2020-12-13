@@ -42,6 +42,14 @@ export const FormInput = styled.input`
   &:focus {
     outline: none;
   }
+
+  &::-webkit-input-placeholder {
+    color: #ffffff;
+  }
+
+  &::-moz-placeholder {
+    color: #ffffff;
+  }
 `;
 
 export const MessageError = styled.span`

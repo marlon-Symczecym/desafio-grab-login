@@ -13,6 +13,7 @@ interface IInput {
   handleChange: any;
   values: any;
   icon?: string;
+  placeholder?: string;
 }
 
 const Input = (props: IInput) => {

@@ -59,6 +59,7 @@ const Form = () => {
           alt="icone do input do email"
           messageError={errorField.email}
           icon="email"
+          placeholder="exemplo@exemplo.com"
         />
         <Input 
           values={form.password}
