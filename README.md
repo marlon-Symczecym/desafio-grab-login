@@ -18,16 +18,11 @@ HTML
 
 CSS
 
-Javascript
+Styled Components
 
-## Como começar
-1 - Use esse template (clicando em Use this template) ou faça um fork deste repositório com o código inicial
+Typescript
 
-2 - Leia as instruções no readme.md
-
-3 - Comece a codar!
-
-4 - Compartilhe seu resultado com a comunidade :)
+ReactJS
 
 ## Requisitos
 - Sua página deve se parecer o mais próximo possível do design
@@ -54,13 +49,28 @@ Cinza: #F8F8F8
 ## Icones
 [Material Icons(outline)](https://material.io/resources/icons/?style=outline)
 
-## Compartilhe
-1 - Inicie seu projeto utilizando esse template no seu github como um repositório público
-
-2 - Faça um print, gif ou vídeo e compartilhe o resultado no seu Linkedin
-
-3 - Você tambm pode adicionar uma "issue" neste repositório mostrando seu resultado final
-
-Também pode me enviar um feedback pelo [LinkedIn](https://www.linkedin.com/in/magdielndantas)!
-
+## Criado do Desafio
 Desafio criado por [Magdiel Dantas](https://github.com/magdielndantas)
+
+## Utilizar projeto
+Para que possa pegar o projeto e conseguir estudar por ele, ou apenas visualizar como foi feito, é só seguir os seguintes passos:
+
+1. Primeiramente precisa clonar esse projeto para sua máquina:
+~~~bah
+git clone https://github.com/marlon-Symczecym/desafio-grab-login.git
+~~~
+
+2. Agora com o projeto já em sua máquina, é só caminhar até ele via o terminar, ou pelo seu gerenciador de arquivos preferido, e abrir o no seu editor ou diretamente pelo terminal mesmo, e baixar os pacotes que foram utilizados:
+~~~bah
+npm install
+~~~
+
+3. Depois de baixado os pacotes, é só executar ele:
+~~~bah
+npm start
+~~~
+
+## Demo
+
+Para experimentar o projeto, é só acessar [CLICAR AQUI](https://desafio-grab-login.vercel.app)
+
